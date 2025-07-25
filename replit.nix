@@ -6,3 +6,4 @@
         pkgs.replitPackages.java-debug
     ];
 }
+pkgs.sqlite
