@@ -62,4 +62,3 @@ mainClass = "Main"
 build = ["javac", "-classpath", ".:target/dependency/*", "-d", ".", "$(find . -type f -name '*.java')"]
 run = ["java", "-classpath", ".:target/dependency/*", "Main"]
 deploymentTarget = "cloudrun"
-run = "javac -cp 'sqlite-jdbc-3.45.1.0.jar:src/main/java' src/main/java/Main.java && java -cp 'sqlite-jdbc-3.45.1.0.jar:src/main/java' Main"
