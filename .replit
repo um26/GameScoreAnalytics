@@ -63,3 +63,15 @@ mainClass = "Main"
 build = ["javac", "-classpath", ".:sqlite-jdbc-3.45.1.0.jar", "-d", ".", "$(find . -type f -name '*.java')"]
 run = ["java", "-classpath", ".:sqlite-jdbc-3.45.1.0.jar", "Main"]
 deploymentTarget = "cloudrun"
+
+[workflows]
+runButton = "Maven Run"
+
+[[workflows.workflow]]
+name = "Maven Run"
+author = 27101064
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "mvn compile exec:java -Dexec.mainClass=\"Main\" -Dexec.args=\"\""

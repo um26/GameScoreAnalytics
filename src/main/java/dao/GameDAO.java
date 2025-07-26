@@ -1,3 +1,4 @@
+
 package dao;
 
 import db.DBConnection;
@@ -39,10 +40,10 @@ public class GameDAO {
 
         try {
             conn = DBConnection.getConnection();
-            String sql = "SELECT Players.name, AVG(score) AS avg_score " +
+            String sql = "SELECT Players.name, AVG(CAST(score AS DECIMAL)) AS avg_score " +
                          "FROM Games " +
                          "JOIN Players ON Games.player_id = Players.id " +
-                         "GROUP BY player_id " +
+                         "GROUP BY Players.id, Players.name " +
                          "ORDER BY avg_score DESC " +
                          "LIMIT 5";
 
