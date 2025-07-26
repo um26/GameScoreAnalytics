@@ -12,3 +12,8 @@
     </dependency>
   </dependencies>
 </project>
+<dependency>
+    <groupId>com.h2database</groupId>
+    <artifactId>h2</artifactId>
+    <version>1.4.200</version> <!-- Choose a suitable version -->
+</dependency>
